@@ -94,7 +94,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText(textToSend);
-
         try {
             execute(message);
         } catch (TelegramApiException e) {
@@ -108,14 +107,12 @@ public class TelegramBot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText("Выберите, какой приют хотите посмотреть: ");
-
         //
         InlineKeyboardMarkup markupInLine = new InlineKeyboardMarkup();
         //
         List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();
         //
         List<InlineKeyboardButton> rowInLine = new ArrayList<>();
-
         //Создание кнопок: текс кнопок, некий идентификатор
         var catBtd = new InlineKeyboardButton();
         catBtd.setText("Приют для кошек");
