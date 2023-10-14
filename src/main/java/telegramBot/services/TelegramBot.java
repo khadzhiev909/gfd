@@ -26,7 +26,6 @@ public class TelegramBot extends TelegramLongPollingBot {
         this.config = config;
         list();
     }
-
     //создание меню
     public void list() {
         List<BotCommand> listofCommands = new ArrayList<>();
@@ -42,19 +41,13 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
 
     }
-
-
     @Override
     public void onUpdateReceived(Update update) {
-
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
-
             long chatId = update.getMessage().getChatId();
-
             //вывел в отдельную переменную
             String firstName = update.getMessage().getChat().getFirstName();
-
             switch (messageText) {
                 case "/start":
                     startCommandReceived(chatId, firstName);
@@ -69,7 +62,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             //получаем id сообшения и id чата
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
             long chatId = update.getCallbackQuery().getMessage().getChatId();
-
             //проверка на какую кнопку нажал
             if(callBackData.equalsIgnoreCase("CAT_SHELTER")){
                 sendMessage(chatId, "анкеты от приюта кошек");
