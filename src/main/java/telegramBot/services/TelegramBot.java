@@ -80,7 +80,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
         }
     }
-
     //Метод, который отправляет сообшение приветствие
     private void startCommandReceived(long chatId, String firstName) {
         String answer = "Привет " + firstName + ", мы приют из Астаны, помогаем вам приютить животное.";
